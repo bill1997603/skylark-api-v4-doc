@@ -15,8 +15,7 @@ GET /api/v4/wechat_clients/access_token HTTP/1.1
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 {
   "access_token": "15_2FkbrFbJuemSy3ANqLmHNu65bpflFlORFTO8tqnvw5a1C0EhF-nfGAvmRhjHqX9-bc8yWqk_2ezUfINwwGLvisa5kgrLQzOKP1rN6SxTixiDklu1fA3UK0GsO_a5nmrkfo_B44xcvtpEj78sVMKcAIAEVT",
   "expired_at": "1541041188" // 过期的 unix 时间戳
@@ -39,8 +38,7 @@ GET /api/v4/wechat_clients/jsapi_ticket HTTP/1.1
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 {
   "ticket": "sM4AOVdWfPE4DxkXGEs8VAT3lleStXwJQ-0K5TVdAa6VYKz9sECvxATXHT4fR5Vcqy8B4XnR3_fiV-xuSIWfjQ",
   "expired_at": "1535715059" // 过期的 unix 时间戳

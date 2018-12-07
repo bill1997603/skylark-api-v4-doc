@@ -10,7 +10,6 @@ Authorization: your_private_token
 
 ```http
 HTTP/1.1 200 OK
-
 [
   {
     "id": 2474,

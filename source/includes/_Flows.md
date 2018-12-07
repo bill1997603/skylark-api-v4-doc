@@ -9,8 +9,7 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 {
   "id":8,
   "title":"简单流程",
@@ -106,48 +105,47 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
+HTTP/1.1 200 OK
 X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 29
 X-SLP-Total-Count: 2
-
- [
-    {
-      "id":110,
-      "sn":"820180503184630000029",
-      "status":"processing",
-      "current_duration_threshold":null,
-      "created_at":"2018-06-06T15:39:10.532+08:00",
-      "updated_at":"2018-06-06T15:39:10.532+08:00",
-      "current_vertex_id":91,
-      "reviewer_vertex_ids":[
-        78
-      ],
-      "response":{
-        "id":548288,
-        "cached_values":{
-          "38761":{
-            "value":[
-              "123123123"
-            ],
-            "text_value":[
-              "123123123"
-            ],
-            "exported_value":[
-              "123123123"
-            ]
-          }
+[
+  {
+    "id":110,
+    "sn":"820180503184630000029",
+    "status":"processing",
+    "current_duration_threshold":null,
+    "created_at":"2018-06-06T15:39:10.532+08:00",
+    "updated_at":"2018-06-06T15:39:10.532+08:00",
+    "current_vertex_id":91,
+    "reviewer_vertex_ids":[
+      78
+    ],
+    "response":{
+      "id":548288,
+      "cached_values":{
+        "38761":{
+          "value":[
+            "123123123"
+          ],
+          "text_value":[
+            "123123123"
+          ],
+          "exported_value":[
+            "123123123"
+          ]
         }
-      },
-      "user":{
-        "id":17013,
-        "name":"aaaa",
-        "identifier":"12345",
-        "headimgurl":"/non-digested-assets/avatars/default.png"
       }
     },
-    ...
-  ]
+    "user":{
+      "id":17013,
+      "name":"aaaa",
+      "identifier":"12345",
+      "headimgurl":"/non-digested-assets/avatars/default.png"
+    }
+  },
+  ...
+]
 ```
 `GET /api/v4/yaw/flows/:id/journeys`
 
@@ -166,40 +164,39 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
-
-  [
-    {
-      "id": 392,
-      "status": "proposed",
-      "comment": null,
-      "esignature": "data:image/png;base64,something",
-      "created_at": "2018-06-29T15:09:31.835+08:00",
-      "updated_at": "2018-06-29T15:09:31.835+08:00",
-      "vertex_id": 168,
-      "user": {
-        "id": 127057,
-        "name": "cacao",
-        "identifier": null,
-        "headimgurl": "/non-digested-assets/avatars/default.png"
-      }
-    },
-    {
-      "id": 393,
-      "status": "approved",
-      "comment": "",
-      "esignature": "data:image/png;base64,something",
-      "created_at": "2018-06-29T15:09:46.297+08:00",
-      "updated_at": "2018-06-29T15:09:46.297+08:00",
-      "vertex_id": 170,
-      "user": {
-        "id": 127057,
-        "name": "cacao",
-        "identifier": null,
-        "headimgurl": "/non-digested-assets/avatars/default.png"
-      }
+HTTP/1.1 200 OK
+[
+  {
+    "id": 392,
+    "status": "proposed",
+    "comment": null,
+    "esignature": "data:image/png;base64,something",
+    "created_at": "2018-06-29T15:09:31.835+08:00",
+    "updated_at": "2018-06-29T15:09:31.835+08:00",
+    "vertex_id": 168,
+    "user": {
+      "id": 127057,
+      "name": "cacao",
+      "identifier": null,
+      "headimgurl": "/non-digested-assets/avatars/default.png"
     }
-  ]
+  },
+  {
+    "id": 393,
+    "status": "approved",
+    "comment": "",
+    "esignature": "data:image/png;base64,something",
+    "created_at": "2018-06-29T15:09:46.297+08:00",
+    "updated_at": "2018-06-29T15:09:46.297+08:00",
+    "vertex_id": 170,
+    "user": {
+      "id": 127057,
+      "name": "cacao",
+      "identifier": null,
+      "headimgurl": "/non-digested-assets/avatars/default.png"
+    }
+  }
+]
 ```
 
 **Parameters**

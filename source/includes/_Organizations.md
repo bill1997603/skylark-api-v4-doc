@@ -9,12 +9,10 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 1
 X-SLP-Total-Count: 4
-
 [
   {
     "id": 14516,
@@ -79,8 +77,7 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 1
 X-SLP-Total-Count: 1
@@ -117,11 +114,9 @@ Authorization: your_private_token
 
 ```http
 HTTP/1.1 200 OK
-
 X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 1
 X-SLP-Total-Count: 2
-
 [
   {
     "id": 15113,
@@ -167,11 +162,9 @@ Authorization: your_private_token
 
 ```http
 HTTP/1.1 200 OK
-
 X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 1
 X-SLP-Total-Count: 3
-
 [
   {
     "id": 127059,
@@ -228,7 +221,6 @@ X-SLP-Total-Count: 3
 POST /api/v4/organizations/ HTTP/1.1
 Authorization: your_private_token
 Content-Type: application/json
-
 {
   "name": "name",
   "description": "description",
@@ -240,9 +232,8 @@ Content-Type: application/json
 ```
 
 ```http
-HTTP/1.1 201 ok
+HTTP/1.1 201 Created
 Content-Type: application/json
-
 {
   "id": 25,
   "name": "name",
@@ -286,9 +277,8 @@ Content-Type: application/json
 ```
 
 ```http
-HTTP/1.1 201 ok
+HTTP/1.1 201 Created
 Content-Type: application/json
-
 {
   "id": 20,
   "name": "jack",

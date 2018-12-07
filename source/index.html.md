@@ -8,16 +8,15 @@ toc_footers:
 
 
 includes:
-  - column_explanation
-  - per_page
-  - Webhook
+  - Pagination
   - WechatClient
-  - pushes_wechat
+  - Pushes
   - Flows
   - Users
   - Organizations
   - Forms
   - Attachments
+  - ColumnExplanation
   - errors
 
 search: true

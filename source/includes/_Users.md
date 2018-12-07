@@ -5,7 +5,6 @@
 ```http
 GET /api/v4/users/:id/organizations HTTP/1.1
 Authorization: your_private_token
-
 {
   "name": "name",
   "description": "description",
@@ -17,8 +16,7 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 [
   {
     "id": 14473,

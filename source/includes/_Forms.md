@@ -9,8 +9,7 @@ Authorization: your_private_token
 ```
 
 ```http
-HTTP/1.1 200 ok
-
+HTTP/1.1 200 OK
 {
   "id":3987,
   "title":"这是一个表单",
@@ -471,11 +470,9 @@ Authorization: your_private_token
 
 ```http
 HTTP/1.1 200 OK
-
 X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 3
 X-SLP-Total-Count: 100
-
 [
   {
     "id":548795,
