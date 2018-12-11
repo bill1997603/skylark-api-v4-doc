@@ -2,30 +2,14 @@
 
 ## 数据库表解释
 
-<ul>
-  <li>
-    <p>Flow: 管理员创建的流程</p>
-    
-    <ul>
-      <li>Field: 发起人所需要填写的字段</li>
-      <li>Vertex & Edge: 节点和边，可以构建出流程的策略图</li>
-    </ul>
-  </li>
+- Flow: 管理员创建的流程
+  - Field: 发起人所需要填写的字段
+  - Vertex & Edge: 节点和边，可以构建出流程的策略图
   
-  <li>
-    <p>Journey: 用户发起的流程</p>
-    
-    <ul>
-      <li>
-        Assignment: 处理者收到的任务
-        <ul>
-          <li>Response: 处理者填写的数据</li>
-        </ul>
-      </li>
-      <li>Moment: 一条流程所有的事件，发起、通过、拒绝、转交...</li>
-    </ul>
-  </li>
-</ul>
+- Journey: 用户发起的流程
+  - Assignment: 处理者收到的任务
+    - Response: 处理者填写的数据
+  - Moment: 一条流程所有的事件，发起、通过、拒绝、转交...
 
 ## 字段解释
 
@@ -88,18 +72,12 @@
 
 ## 流程状态解释
 
-<ul>
-  <li>当流程发起时(Journey Create)，会为发起人创建一个proposed Assignment</li>
-  <li>当流程到达处理人节点是，会为每一个处理人创建一个processed Assignment</li>
-  <li>proposed Assignment和Journey的状态是同步变化的，eg: Journey为finished, proposed Assignment也为finished</li>
-  <li>
-    processed Assignment状态对Journey影响
-    <ul>
-      <li>当所有节点都通过(approved)时，流程(Journey)变成finished</li>
-      <li>处理人拒绝(refused)到开始节点，流程(Journey)变成receding</li>
-    </ul>
-  </li>
-</ul>
+  - 当流程发起时(Journey Create)，会为发起人创建一个proposed Assignment
+  - 当流程到达处理人节点是，会为每一个处理人创建一个processed Assignment
+  - proposed Assignment和Journey的状态是同步变化的，eg: Journey为finished, proposed Assignment也为finished
+  - processed Assignment状态对Journey影响
+    - 当所有节点都通过(approved)时，流程(Journey)变成finished
+    - 处理人拒绝(refused)到开始节点，流程(Journey)变成receding
 
 | 处理人(processed) Assignment Status | Meaning |
 | --- | --- |
@@ -120,10 +98,8 @@
 
 ## Response cached_values 说明
 
-<ul>
-  <li>展示建议使用text_value</li>
-  <li>附件的下载地址有权限限制，如果想获取附件真正的下载地址，通过附件<a href='https://github.com/GreenNerd/SLP-ChangeLog/wiki/%E9%99%84%E4%BB%B6api-v4'>接口</a></li>
-</ul>
+- 展示建议使用text_value
+- 附件的下载地址有权限限制，如果想获取附件真正的下载地址，通过附件<a href='https://github.com/GreenNerd/SLP-ChangeLog/wiki/%E9%99%84%E4%BB%B6api-v4'>接口</a>
 
 ```
 一般字段

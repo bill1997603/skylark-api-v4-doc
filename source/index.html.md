@@ -26,18 +26,14 @@ search: true
 
 Welcome to the Skylark API!
 
-<aside class="notice">
   域名：
   
-  <li>测试：https://beta.skylarkly.com</li>
-  <li>正式：https://skylarkly.com</li>
-</aside>
+  - 测试：https://beta.skylarkly.com
+  - 正式：https://skylarkly.com
 
-<aside class="notice">
-  注：
+**注**：
   
-  <li>所有的开发对接工作在Beta https://beta.skylarkly.com 上完成，部署时会给线上环境的配置</li>
-</aside>
+  - 所有的开发对接工作在Beta https://beta.skylarkly.com 上完成，部署时会给线上环境的配置
 
 # Authentication
 

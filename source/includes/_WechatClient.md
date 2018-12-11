@@ -2,10 +2,8 @@
 
 注：
 
-<ul>
-  <li>access_token和jsapi_ticket都是在过期时间之前，可以一直使用，请求得到后而缓存之</li>
-  <li>不要用access_token去微信端请求jsapi_ticket，jsapi_ticket通过我们提供的接口获取</li>
-</ul>
+  - access_token和jsapi_ticket都是在过期时间之前，可以一直使用，请求得到后而缓存之
+  - 不要用access_token去微信端请求jsapi_ticket，jsapi_ticket通过我们提供的接口获取
 
 ## access_token
 
