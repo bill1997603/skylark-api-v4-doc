@@ -4,7 +4,7 @@
 
 ```http
 GET /api/v4/forms/:id HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -464,7 +464,7 @@ HTTP/1.1 200 OK
 
 ```http
 GET /api/v4/forms/:id/responses HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 

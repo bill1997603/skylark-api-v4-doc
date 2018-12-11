@@ -4,7 +4,7 @@
 
 ```http
 GET /api/v4/organizations HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -72,7 +72,7 @@ X-SLP-Total-Count: 4
 
 ```http
 GET /api/v4/organizations/roots HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -108,7 +108,7 @@ X-SLP-Total-Count: 1
 
 ```http
 GET /api/v4/organizations/:id/children HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -156,7 +156,7 @@ X-SLP-Total-Count: 2
 
 ```http
 GET /api/v4/organizations/:id/members HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -219,7 +219,7 @@ X-SLP-Total-Count: 3
 
 ```http
 POST /api/v4/organizations/ HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 Content-Type: application/json
 {
   "name": "name",
@@ -265,7 +265,7 @@ Content-Type: application/json
 
 ```http
 POST /api/v4/organizations/:organization_id/members HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 Content-Type: application/json
 
 {

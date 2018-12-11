@@ -4,7 +4,7 @@
 
 ```http
 GET /api/v4/users/:id/organizations HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 {
   "name": "name",
   "description": "description",

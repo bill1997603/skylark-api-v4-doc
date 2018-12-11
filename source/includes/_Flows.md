@@ -4,7 +4,7 @@
 
 ```http
 GET /api/v4/yaw/flows/:id HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -100,7 +100,7 @@ HTTP/1.1 200 OK
 
 ```http
 GET /api/v4/yaw/flows/:id/journeys HTTP/1.1
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
@@ -159,7 +159,7 @@ X-SLP-Total-Count: 2
 
 ```http
 GET /api/v4/yaw/journeys/:id/moments
-Authorization: your_private_token
+Authorization: your_authorization
 
 ```
 
