@@ -26,7 +26,7 @@ HTTP/1.1 200 OK
 
 *   None
 
-<a href='https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183'>微信文档</a>
+[微信文档](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183)
 
 ## jsapi_ticket
 

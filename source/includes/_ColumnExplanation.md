@@ -99,7 +99,7 @@
 ## Response cached_values 说明
 
 - 展示建议使用text_value
-- 附件的下载地址有权限限制，如果想获取附件真正的下载地址，通过附件<a href='https://github.com/GreenNerd/SLP-ChangeLog/wiki/%E9%99%84%E4%BB%B6api-v4'>接口</a>
+- 附件的下载地址有权限限制，如果想获取附件真正的下载地址，通过附件[接口](https://github.com/GreenNerd/SLP-ChangeLog/wiki/%E9%99%84%E4%BB%B6api-v4)
 
 ```
 一般字段

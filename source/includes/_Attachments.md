@@ -32,4 +32,4 @@ HTTP/1.1 200 OK
 | Name | Type | Description | Comments |
 | --- | --- | --- | ---- |
 | ids | array | 附件id的集合 |
-| fops | string | 七牛云图片处理的参数，<a href='https://developer.qiniu.com/search?keyword=%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86'>文档</a> |
+| fops | string | 七牛云图片处理的参数，[文档](https://developer.qiniu.com/search?keyword=%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86) |

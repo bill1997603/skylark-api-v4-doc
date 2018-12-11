@@ -26,7 +26,7 @@ search: true
 
 Welcome to the Skylark API!
 
-  域名：
+域名：
   
   - 测试：https://beta.skylarkly.com
   - 正式：https://skylarkly.com

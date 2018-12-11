@@ -20,7 +20,7 @@ HTTP/1.1 200 OK
 
 ### news_entity 结构
 
-结构固定，以下4个key都是必须的，具体意思参考微信<a href='https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547'>微信客服消息</a>
+结构固定，以下4个key都是必须的，具体意思参考微信[微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547)
 
 ```http
 HTTP/1.1 200 OK
@@ -51,15 +51,15 @@ HTTP/1.1 200 OK
 
 ### template_entity 结构
 
-结构固定，但data的实际结构会根据模板而改变，具体意思参考<a href='https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547'>微信客服消息</a>
+结构固定，但data的实际结构会根据模板而改变，具体意思参考[微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547)
 
 **Parameters**
 
 | Name | Type | Description |
 | --- | --- | --- |
 | openids | Array | Required 接收用户的openid的集合 |
-| news_entity | Object | <a href='https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547'>微信客服消息</a> |
-| template_entity | Object | <a href='https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547'>微信客服消息</a> |
+| news_entity | Object | [微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547) |
+| template_entity | Object | [微信客服消息](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140547) |
 
 `news_entity`、`template_entity` 两者必须有一个。如果都存在，微信推送会先尝试客服消息，当客服消息失败时，再尝试模板消息
 
