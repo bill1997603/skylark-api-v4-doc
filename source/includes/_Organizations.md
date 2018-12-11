@@ -107,7 +107,7 @@ X-SLP-Total-Count: 1
 ## 子代组织
 
 ```http
-GET /api/v4/organizations/:id/children HTTP/1.1
+GET /api/v4/organizations/15113/children HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -155,7 +155,7 @@ X-SLP-Total-Count: 2
 ## 组织成员
 
 ```http
-GET /api/v4/organizations/:id/members HTTP/1.1
+GET /api/v4/organizations/127059/members HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -264,7 +264,7 @@ Content-Type: application/json
 ## 创建组织成员
 
 ```http
-POST /api/v4/organizations/:organization_id/members HTTP/1.1
+POST /api/v4/organizations/20/members HTTP/1.1
 Authorization: your_authorization
 Content-Type: application/json
 

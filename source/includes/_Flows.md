@@ -3,7 +3,7 @@
 ## 创建组织流程
 
 ```http
-GET /api/v4/yaw/flows/:id HTTP/1.1
+GET /api/v4/yaw/flows/8 HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -99,7 +99,7 @@ HTTP/1.1 200 OK
 ## 获取发起的流程列表
 
 ```http
-GET /api/v4/yaw/flows/:id/journeys HTTP/1.1
+GET /api/v4/yaw/flows/110/journeys HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -158,7 +158,7 @@ X-SLP-Total-Count: 2
 ## 获取某条流程的所有Moment
 
 ```http
-GET /api/v4/yaw/journeys/:id/moments
+GET /api/v4/yaw/journeys/392/moments
 Authorization: your_authorization
 
 ```

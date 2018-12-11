@@ -3,7 +3,7 @@
 ## 查询
 
 ```http
-GET /api/v4/attachments/query HTTP/1.1
+POST /api/v4/attachments/query HTTP/1.1
 Authorization: your_authorization
 
 ```

@@ -3,7 +3,7 @@
 ## 表单信息
 
 ```http
-GET /api/v4/forms/:id HTTP/1.1
+GET /api/v4/forms/3987 HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -463,7 +463,7 @@ HTTP/1.1 200 OK
 ## 表单数据
 
 ```http
-GET /api/v4/forms/:id/responses HTTP/1.1
+GET /api/v4/forms/548795/responses HTTP/1.1
 Authorization: your_authorization
 
 ```

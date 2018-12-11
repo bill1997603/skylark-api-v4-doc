@@ -3,7 +3,7 @@
 ## 所在组织
 
 ```http
-GET /api/v4/users/:id/organizations HTTP/1.1
+GET /api/v4/users/14473/organizations HTTP/1.1
 Authorization: your_authorization
 {
   "name": "name",
