@@ -3,7 +3,7 @@
 ## 查询
 
 ```http
-POST /api/v4/attachments/query HTTP/1.1
+GET /api/v4/attachments/query?id[]=2474&id[]=2475 HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -25,7 +25,7 @@ HTTP/1.1 200 OK
 
 ```
 
-`POST /api/v4/attachments/query`
+`GET /api/v4/attachments/query`
 
 **Parameters**
 
