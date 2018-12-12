@@ -1,17 +1,22 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+language_tabs:
+  - http
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+
 
 includes:
+  - Pagination
+  - WechatClient
+  - Pushes
+  - Flows
+  - Users
+  - Organizations
+  - Forms
+  - Attachments
+  - ColumnExplanation
   - errors
 
 search: true
@@ -19,221 +24,54 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Skylark API!
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+域名：
+  
+  - 测试：https://beta.skylarkly.com
+  - 正式：https://skylarkly.com
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+**注**：
+  
+  - 所有的开发对接工作在Beta https://beta.skylarkly.com 上完成，部署时会给线上环境的配置
 
 # Authentication
 
-> To authorize, use this code:
+1、创建一个ApiApplication，获得`appid`和`appsecret`（由我们提供）
 
-```ruby
-require 'kittn'
+2、获得Namespace的id（由我们提供）
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+3、构建Authorization header
 
-```python
-import kittn
+`header`值的形式：`appid`:`encoded_data`
 
-api = kittn.authorize('meowmeowmeow')
-```
+`appid`：为第一步获取到的`appid`
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+`encoded_data`：以`appsecret`为key，用JWT的HS256进行加密，加密payload为`{"namespace_id":id}`（id为Integer）
 
-```javascript
-const kittn = require('kittn');
+示例：
 
-let api = kittn.authorize('meowmeowmeow');
-```
+`appid: 56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721`
 
-> Make sure to replace `meowmeowmeow` with your API key.
+`appsecret: 7bb73122837c4befb9c6593287f73a5e915415fe29f5aeb182717b66e873e96b`
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+`namespace_id: 1`
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+JWT的
 
-`Authorization: meowmeowmeow`
+HEADER为：`{"typ":"JWT","alg":"HS256"}`
+PAYLOAD为：`{"namespace_id":1}`
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+计算出`encoded_data`为：
 
-# Kittens
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E`
 
-## Get All Kittens
+最终构建出`Authorization` header的值为： 
 
-```ruby
-require 'kittn'
+`56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E`
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+可以用jwt.io进行测试
 
-```python
-import kittn
+实际使用中，处于安全的考虑，最好在payload中加入过期时间，如：
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+  `{"namespace_id":1,"exp":1535553256}`
