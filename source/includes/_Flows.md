@@ -158,7 +158,7 @@ X-SLP-Total-Count: 2
 ## 获取某条流程的所有Moment
 
 ```http
-GET /api/v4/yaw/journeys/392/moments
+GET /api/v4/yaw/journeys/392/moments HTTP/1.1
 Authorization: your_authorization
 
 ```
@@ -198,6 +198,7 @@ HTTP/1.1 200 OK
   }
 ]
 ```
+`GET /api/v4/yaw/journeys/:id/moments`
 
 **Parameters**
 

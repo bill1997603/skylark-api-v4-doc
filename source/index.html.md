@@ -16,6 +16,8 @@ includes:
   - Organizations
   - Forms
   - Attachments
+  - Accesses
+  - Settings
   - ColumnExplanation
   - errors
 
