@@ -289,6 +289,33 @@
                   <li>
                     <a href="#66dd10a168" class="toc-h2 toc-link" data-title="创建组织成员">创建组织成员</a>
                   </li>
+                  <li>
+                    <a href="#29d823bb6d" class="toc-h2 toc-link" data-title="修改组织信息">修改组织信息</a>
+                  </li>
+                  <li>
+                    <a href="#59985a21a4" class="toc-h2 toc-link" data-title="删除组织">删除组织</a>
+                  </li>
+                  <li>
+                    <a href="#3e58460320" class="toc-h2 toc-link" data-title="修改组织成员信息">修改组织成员信息</a>
+                  </li>
+                  <li>
+                    <a href="#874a00b2ee" class="toc-h2 toc-link" data-title="增加组织人员">增加组织人员</a>
+                  </li>
+                  <li>
+                    <a href="#e10718abdb" class="toc-h2 toc-link" data-title="移除组织成员">移除组织成员</a>
+                  </li>
+                  <li>
+                    <a href="#cb023d1f3e" class="toc-h2 toc-link" data-title="增加组织管理员">增加组织管理员</a>
+                  </li>
+                  <li>
+                    <a href="#1f3fcec323" class="toc-h2 toc-link" data-title="删除组织管理员">删除组织管理员</a>
+                  </li>
+                  <li>
+                    <a href="#02b8482275" class="toc-h2 toc-link" data-title="修改组织管理员权限">修改组织管理员权限</a>
+                  </li>
+                  <li>
+                    <a href="#5c224df13c" class="toc-h2 toc-link" data-title="查询当前组织管理员">查询当前组织管理员</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -307,6 +334,22 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#711363c424" class="toc-h2 toc-link" data-title="查询">查询</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#accesses" class="toc-h1 toc-link" data-title="Accesses">Accesses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#3389c548ae" class="toc-h2 toc-link" data-title="获取当前空间下所有权限">获取当前空间下所有权限</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#settings" class="toc-h1 toc-link" data-title="Settings">Settings</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#95c0eddacd" class="toc-h2 toc-link" data-title="批量删除不在任何组织中的成员">批量删除不在任何组织中的成员</a>
                   </li>
               </ul>
           </li>
@@ -679,10 +722,10 @@ PAYLOAD为：<code>{&quot;namespace_id&quot;:1}</code></p>
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='moment'>获取某条流程的所有Moment</h2><pre class="highlight http tab-http"><code><span class="err">GET /api/v4/yaw/journeys/392/moments
-Authorization: your_authorization
+<h2 id='moment'>获取某条流程的所有Moment</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/journeys/392/moments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
-</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="s">[</span>
 <span class="s">  {</span>
 <span class="s">    "id": 392,</span>
@@ -716,6 +759,8 @@ Authorization: your_authorization
 <span class="s">  }</span>
 <span class="s">]</span>
 </code></pre>
+<p><code>GET /api/v4/yaw/journeys/:id/moments</code></p>
+
 <p><strong>Parameters</strong></p>
 
 <table><thead>
@@ -933,7 +978,7 @@ Authorization: your_authorization
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='02e4569f06'>组织成员</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/127059/members</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<h2 id='02e4569f06'>组织成员</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/:organization_id/members</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
 
 </code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -993,7 +1038,7 @@ Authorization: your_authorization
 </tr>
 </thead><tbody>
 <tr>
-<td>id</td>
+<td>organization_id</td>
 <td>integer</td>
 <td>组织id</td>
 <td></td>
@@ -1130,6 +1175,483 @@ Authorization: your_authorization
 <td>电话号码</td>
 <td></td>
 </tr>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='29d823bb6d'>修改组织信息</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/organizations/21</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"修改组织名字"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"修改组织描述"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"application_strategy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"must_approved"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">    "id": 21,</span>
+<span class="s">    "name": "修改组织名字",</span>
+<span class="s">    "description": "修改组织描述",</span>
+<span class="s">    "description_text": "修改组织描述",</span>
+<span class="s">    "created_at": "2018-12-05T10:19:41.202+08:00",</span>
+<span class="s">    "updated_at": "2018-12-13T09:29:52.080+08:00",</span>
+<span class="s">    "children_count": 1,</span>
+<span class="s">    "parent_id": null,</span>
+<span class="s">    "ancestry": null,</span>
+<span class="s">    "application_strategy": "must_approved"</span>
+<span class="s">}</span>
+
+</code></pre>
+<p><code>PUS /api/v4/organizations/:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>名字</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>描述</td>
+<td></td>
+</tr>
+<tr>
+<td>application_strategy</td>
+<td>string</td>
+<td>审核状态</td>
+<td>[:must_approved, :auto_approved, :closed]</td>
+</tr>
+</tbody></table>
+<h2 id='59985a21a4'>删除组织</h2><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/api/v4/organizations/21</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Content</span>
+
+</code></pre>
+<p><code>DELETE /api/v4/organizations/:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='3e58460320'>修改组织成员信息</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/organizations/23/members/20</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jack"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jack_123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10086100101"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">    "id": 20,</span>
+<span class="s">    "name": "jack",</span>
+<span class="s">    "nickname": "jack",</span>
+<span class="s">    "sex": null,</span>
+<span class="s">    "phone": "10086100101",</span>
+<span class="s">    "identifier": "jack_123",</span>
+<span class="s">    "openid": null,</span>
+<span class="s">    "created_at": "2018-12-06T10:54:34.901+08:00",</span>
+<span class="s">    "updated_at": "2018-12-13T10:08:35.305+08:00"</span>
+<span class="s">}</span>
+
+</code></pre>
+<p><code>PUT /api/v4/organizations/:organization_id/members/:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>名字</td>
+<td></td>
+</tr>
+<tr>
+<td>identifier</td>
+<td>string</td>
+<td>识别码</td>
+<td></td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>电话号码</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='874a00b2ee'>增加组织人员</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/organizations/23/members/add</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"member_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">[19]</span>
+
+</code></pre>
+<p><code>PUT /api/v4/organizations/:organization_id/members/add</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>member_ids</td>
+<td>array</td>
+<td>成员id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='e10718abdb'>移除组织成员</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/organizations/23/members/remove</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"member_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">[19]</span>
+
+</code></pre>
+<p><code>PUT /api/v4/organizations/:organization_id/members/remove</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>member_ids</td>
+<td>array</td>
+<td>成员id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='cb023d1f3e'>增加组织管理员</h2><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v4/organizations/23/administrators</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+  </span><span class="s2">"access_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">    "id": 33,</span>
+<span class="s">    "user": {</span>
+<span class="s">        "id": 19,</span>
+<span class="s">        "name": "123",</span>
+<span class="s">        "nickname": null,</span>
+<span class="s">        "phone": "19929029450",</span>
+<span class="s">        "identifier": "qwecasca",</span>
+<span class="s">        "qq": null,</span>
+<span class="s">        "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">        "openid": null,</span>
+<span class="s">        "imported_alias": "123",</span>
+<span class="s">        "from_wechat": false,</span>
+<span class="s">        "tags": [],</span>
+<span class="s">        "custom_values": []</span>
+<span class="s">    },</span>
+<span class="s">    "access": {</span>
+<span class="s">        "id": 1,</span>
+<span class="s">        "name": "超级管理员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            1,</span>
+<span class="s">            3,</span>
+<span class="s">            4</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    "organization": {</span>
+<span class="s">        "id": 23,</span>
+<span class="s">        "name": "123123",</span>
+<span class="s">        "description": "123123",</span>
+<span class="s">        "created_at": "2018-12-05T10:41:33.068+08:00"</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+
+</code></pre>
+<p><code>POST /api/v4/organizations/:organization_id/administrators</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>成员id</td>
+<td></td>
+</tr>
+<tr>
+<td>access_id</td>
+<td>integer</td>
+<td>权限id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='1f3fcec323'>删除组织管理员</h2><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/api/v4/organizations/23/administrators/33</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Content</span>
+
+</code></pre>
+<p><code>DELETE /api/v4/organizations/:organization_id/administrators/:id</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>关联管理员id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='02b8482275'>修改组织管理员权限</h2><pre class="highlight http tab-http"><code><span class="nf">PUT</span> <span class="nn">/api/v4/organizations/23/administrators/33</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+  </span><span class="s2">"access_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">  "id": 33,</span>
+<span class="s">  "user": {</span>
+<span class="s">    "id": 19,</span>
+<span class="s">    "name": "123",</span>
+<span class="s">    "nickname": null,</span>
+<span class="s">    "phone": "19929029450",</span>
+<span class="s">    "identifier": "qwecasca",</span>
+<span class="s">    "qq": null,</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">    "openid": null,</span>
+<span class="s">    "imported_alias": "123",</span>
+<span class="s">    "from_wechat": false,</span>
+<span class="s">    "tags": [],</span>
+<span class="s">    "custom_values": []</span>
+<span class="s">  },</span>
+<span class="s">  "access": {</span>
+<span class="s">    "id": 1,</span>
+<span class="s">    "name": "超级管理员",</span>
+<span class="s">    "actions": [</span>
+<span class="s">      1,</span>
+<span class="s">      3,</span>
+<span class="s">      4</span>
+<span class="s">    ],</span>
+<span class="s">    "founded": false</span>
+<span class="s">  },</span>
+<span class="s">  "organization": {</span>
+<span class="s">    "id": 23,</span>
+<span class="s">    "name": "123123",</span>
+<span class="s">    "description": "123123",</span>
+<span class="s">    "created_at": "2018-12-05T10:41:33.068+08:00"</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+
+</code></pre>
+<p><code>PUT /api/v4/organizations/:organization_id/administrators/:id</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>integer</td>
+<td>成员id</td>
+<td></td>
+</tr>
+<tr>
+<td>access_id</td>
+<td>integer</td>
+<td>权限id</td>
+<td></td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>关联管理员id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='5c224df13c'>查询当前组织管理员</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/:organization_id/administrators</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id": 18,</span>
+<span class="s">    "user": {</span>
+<span class="s">      "id": 3,</span>
+<span class="s">      "name": "a11",</span>
+<span class="s">      "nickname": null,</span>
+<span class="s">      "phone": "18828072450",</span>
+<span class="s">      "identifier": "18828072450",</span>
+<span class="s">      "qq": null,</span>
+<span class="s">      "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">      "openid": null,</span>
+<span class="s">      "imported_alias": "a11",</span>
+<span class="s">      "from_wechat": false,</span>
+<span class="s">      "tags": [],</span>
+<span class="s">      "custom_values": []</span>
+<span class="s">    },</span>
+<span class="s">    "access": {</span>
+<span class="s">      "id": 2,</span>
+<span class="s">      "name": "创建者",</span>
+<span class="s">      "actions": [</span>
+<span class="s">        1,</span>
+<span class="s">        3,</span>
+<span class="s">        4</span>
+<span class="s">      ],</span>
+<span class="s">      "founded": true</span>
+<span class="s">    },</span>
+<span class="s">    "organization": {</span>
+<span class="s">      "id": 23,</span>
+<span class="s">      "name": "123123",</span>
+<span class="s">      "description": "123123",</span>
+<span class="s">      "created_at": "2018-12-05T10:41:33.068+08:00"</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+
+</code></pre>
+<p><code>GET /api/v4/organizations/:organization_id/administrators</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
 <tr>
 <td>organization_id</td>
 <td>integer</td>
@@ -1876,6 +2398,40 @@ Authorization: your_authorization
 <td></td>
 </tr>
 </tbody></table>
+<h1 id='accesses'>Accesses</h1><h2 id='3389c548ae'>获取当前空间下所有权限</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/accesses</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">    {</span>
+<span class="s">        "id": 1,</span>
+<span class="s">        "name": "超级管理员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            1,</span>
+<span class="s">            3,</span>
+<span class="s">            4</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    },</span>
+<span class="s">    {</span>
+<span class="s">        "id": 7,</span>
+<span class="s">        "name": "测试管理员",</span>
+<span class="s">        "actions": [</span>
+<span class="s">            4</span>
+<span class="s">        ],</span>
+<span class="s">        "founded": false</span>
+<span class="s">    }</span>
+<span class="s">]</span>
+
+</code></pre>
+<p><code>GET /api/v4/accesses</code></p>
+<h1 id='settings'>Settings</h1><h2 id='95c0eddacd'>批量删除不在任何组织中的成员</h2><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/api/v4/settings/remove_suspended_members</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">No Content</span>
+
+</code></pre>
+<p><code>DELETE /api/v4/settings/remove_suspended_members</code></p>
 <h1 id='column-explanation'>Column Explanation</h1><h2 id='7dbb085c42'>数据库表解释</h2>
 <ul>
 <li><p>Flow: 管理员创建的流程</p>
