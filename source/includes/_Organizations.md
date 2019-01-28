@@ -249,7 +249,7 @@ Content-Type: application/json
 
 ```
 
-`POST /api/v4/organizations/:organization_id/members`
+`POST /api/v4/organizations/`
 
 **Parameters**
 
@@ -293,7 +293,7 @@ Content-Type: application/json
 
 ```
 
-`POST /api/v4/organizations/`
+`POST /api/v4/organizations/:organization_id/members`
 
 **Parameters**
 
