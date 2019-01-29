@@ -72,7 +72,7 @@ PAYLOAD为：`{"namespace_id":1}`
 
 `56dc47367f8c775cf2318aa29345af558ad8aa2835bc3cc1d4416abfa94bd721:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.z-RcFpDiYBXAO8i88M_x1JpJRr6CDMo8sb1rU6dw-0E`
 
-可以用jwt.io进行测试
+可以用[jwt.io](https://jwt.io)进行测试
 
 实际使用中，处于安全的考虑，最好在payload中加入过期时间，如：
 
