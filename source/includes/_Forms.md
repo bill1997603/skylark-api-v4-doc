@@ -474,209 +474,104 @@ X-SLP-Current-Page: 1
 X-SLP-Total-Pages: 3
 X-SLP-Total-Count: 100
 [
-  {
-    "id":548795,
-    "created_at":"2018-07-02T11:15:54.546+08:00",
-    "cached_values":{
-      "38663":{
-        "value":[
-          "嘻"
-        ],
-        "text_value":[
-          "嘻"
-        ],
-        "exported_value":[
-          "嘻"
-        ]
-      },
-      "38664":{
-        "value":[
-          "啦"
-        ],
-        "text_value":[
-          "啦"
-        ],
-        "exported_value":[
-          "啦"
-        ]
-      },
-      "38665":{
-        "value":[
-          "哈"
-        ],
-        "text_value":[
-          "哈"
-        ],
-        "exported_value":[
-          "哈"
-        ]
-      },
-      "38667":{
-        "value":[
-          313
-        ],
-        "text_value":[
-          313
-        ],
-        "exported_value":[
-          313
-        ]
-      },
-      "38668":{
-        "value":[
-          "2018-08-03 11:14"
-        ],
-        "text_value":[
-          "2018-08-03 11:14"
-        ],
-        "exported_value":[
-          "2018-08-03 11:14"
-        ]
-      },
-      "38669":{
-        "value":[
-          {
-            "gid":"gid://skylark/Option/31826",
-            "id":31826,
-            "value":"4"
-          }
-        ],
-        "text_value":[
-          "4"
-        ],
-        "exported_value":[
-          "4"
-        ]
-      },
-      "38670":{
-        "value":[
-          {
-            "gid":"gid://skylark/Option/31827",
-            "id":31827,
-            "value":"4"
-          },
-          {
-            "value":"333"
-          }
-        ],
-        "text_value":[
-          "4",
-          "333"
-        ],
-        "exported_value":[
-          "4，333"
-        ]
-      },
-      "38672":{
-        "value":[
-          {
-            "gid":"gid://skylark/Choice/1436",
-            "id":1436,
-            "value":"西北大区-陕西分区-陕西"
-          }
-        ],
-        "text_value":[
-          "西北大区-陕西分区-陕西"
-        ],
-        "exported_value":[
-          [
-            "西北大区",
-            "陕西分区",
-            "陕西",
-            null,
-            null
-          ]
-        ]
-      },
-      "38673":{
-        "value":[
-          {
-            "value":"西北大区（T2-05服务商）"
-          }
-        ],
-        "text_value":[
-          "西北大区（T2-05服务商）"
-        ],
-        "exported_value":[
-          "西北大区（T2-05服务商）"
-        ]
-      },
-      "38674":{
-        "value":[
-          4
-        ],
-        "text_value":[
-          4
-        ],
-        "exported_value":[
-          4
-        ]
-      },
-      "38676":{
-        "group_ids":[
-          "1530501267755",
-          "1530501349912"
-        ],
-        "child_ids":[
-          38677,
-          38678
-        ]
-      },
-      "38677":{
-        "grouped_ids":[
-          "1530501267755",
-          "1530501349912"
-        ],
-        "grouped_values":{
-          "1530501267755":{
-            "group_id":"1530501267755",
-            "value":[
-              "333"
-            ],
-            "text_value":[
-              "333"
-            ],
-            "exported_value":[
-              "333"
+    {
+        "id": 174,
+        "created_at": "2019-02-25T22:00:00.364+08:00",
+        "cached_values": {
+            "61": {
+                "value": [
+                    "dasdassaddsa"
+                ],
+                "text_value": [
+                    "dasdassaddsa"
+                ],
+                "exported_value": [
+                    "dasdassaddsa"
+                ]
+            }
+        },
+        "user": {
+            "id": 1,
+            "name": "第一个管理员",
+            "nickname": "",
+            "sex": null,
+            "phone": null,
+            "identifier": "759251fe10d79e6c823b",
+            "openid": null,
+            "created_at": "2018-11-02T15:00:17.714+08:00",
+            "updated_at": "2018-11-07T10:22:43.440+08:00",
+            "headimgurl": "/non-digested-assets/avatars/default_96.png",
+            "tags": [
+                {
+                    "id": 1,
+                    "name": "b1"
+                }
             ]
-          },
-          "1530501349912":{
-            "group_id":"1530501349912",
-            "value":[
-              "22"
-            ],
-            "text_value":[
-              "22"
-            ],
-            "exported_value":[
-              "22"
+        },
+        "entries": [
+            {
+                "id": 117,
+                "field_id": 61,
+                "option_id": null,
+                "value": "dasdassaddsa",
+                "choice_id": null,
+                "value_id": null,
+                "latitude": null,
+                "longitude": null,
+                "group_id": null,
+                "detail_id": null
+            }
+        ]
+    },
+    {
+        "id": 173,
+        "created_at": "2019-02-25T21:59:54.509+08:00",
+        "cached_values": {
+            "61": {
+                "value": [
+                    "231213321"
+                ],
+                "text_value": [
+                    "231213321"
+                ],
+                "exported_value": [
+                    "231213321"
+                ]
+            }
+        },
+        "user": {
+            "id": 1,
+            "name": "第一个管理员",
+            "nickname": "",
+            "sex": null,
+            "phone": null,
+            "identifier": "759251fe10d79e6c823b",
+            "openid": null,
+            "created_at": "2018-11-02T15:00:17.714+08:00",
+            "updated_at": "2018-11-07T10:22:43.440+08:00",
+            "headimgurl": "/non-digested-assets/avatars/default_96.png",
+            "tags": [
+                {
+                    "id": 1,
+                    "name": "b1"
+                }
             ]
-          }
-        }
-      },
-      "38678":{
-        "grouped_ids":[
-          "1530501267755",
-          "1530501349912"
-        ],
-        "grouped_values":{
-          "1530501267755":{
-            "group_id":"1530501267755",
-            "value":[
-              5
-            ],
-            "text_value":[
-              5
-            ],
-            "exported_value":[
-              5
-            ]
-          }
-        }
-      }
+        },
+        "entries": [
+            {
+                "id": 116,
+                "field_id": 61,
+                "option_id": null,
+                "value": "231213321",
+                "choice_id": null,
+                "value_id": null,
+                "latitude": null,
+                "longitude": null,
+                "group_id": null,
+                "detail_id": null
+            }
+        ]
     }
-  },
-  ...
 ]
 
 ```
