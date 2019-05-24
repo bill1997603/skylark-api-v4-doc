@@ -19,6 +19,7 @@ includes:
   - Accesses
   - Settings
   - ColumnExplanation
+  - Tags
   - errors
 
 search: true
