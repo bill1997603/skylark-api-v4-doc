@@ -15,16 +15,141 @@ X-SLP-Total-Pages: 1
 X-SLP-Total-Count: 4
 [
   {
-    "id": 14516,
-    "name": "第一个组织",
-    "description": "您可以根据需要更改名字及描述，或者删除组织",
+    "id": 1,
+    "name": "开发部",
+    "description": "<p>您可以根据需要更改名字及描述，或者删除组织</p>",
     "description_text": "您可以根据需要更改名字及描述，或者删除组织",
-    "created_at": "2017-12-25T16:06:13.111+08:00",
-    "updated_at": "2018-08-14T10:00:49.663+08:00",
-    "children_count": 2,
+    "created_at": "2016-08-26T18:08:22.624+08:00",
+    "updated_at": "2019-07-25T11:00:59.249+08:00",
+    "children_count": 4,
     "parent_id": null,
-    "ancestry": null
-  },
+    "ancestry": null,
+    "application_strategy": "closed",
+    "profile_submission": {
+      "entries": [
+          {
+            "id": 513216,
+            "field_id": 4394,
+            "option_id": null,
+            "value": "2019-07-25",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+          },
+          {
+            "id": 513215,
+            "field_id": 4393,
+            "option_id": 2948,
+            "value": "B",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+          },
+          {
+            "id": 513214,
+            "field_id": 4393,
+            "option_id": 2947,
+            "value": "A",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+          },
+          {
+            "id": 513213,
+            "field_id": 4380,
+            "option_id": 2933,
+            "value": "A",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+          },
+          {
+            "id": 513212,
+            "field_id": 4379,
+            "option_id": null,
+            "value": "123",
+            "choice_id": null,
+            "value_id": null,
+            "latitude": null,
+            "longitude": null,
+            "group_id": null,
+            "detail_id": null
+          }
+        ],
+        "cached_values": {
+            "4379": {
+                "value": [
+                    "123"
+                ],
+                "text_value": [
+                    "123"
+                ],
+                "exported_value": [
+                    "123"
+                ]
+            },
+            "4380": {
+                "value": [
+                    {
+                        "id": 2933,
+                        "gid": "gid://skylark/Option/2933",
+                        "value": "A"
+                    }
+                ],
+                "text_value": [
+                    "A"
+                ],
+                "exported_value": [
+                    "A"
+                ]
+            },
+            "4393": {
+                "value": [
+                    {
+                        "id": 2947,
+                        "gid": "gid://skylark/Option/2947",
+                        "value": "A"
+                    },
+                    {
+                        "id": 2948,
+                        "gid": "gid://skylark/Option/2948",
+                        "value": "B"
+                    }
+                ],
+                "text_value": [
+                    "A",
+                    "B"
+                ],
+                "exported_value": [
+                    "A，B"
+                ]
+            },
+            "4394": {
+                "value": [
+                    "2019-07-25"
+                ],
+                "text_value": [
+                    "2019-07-25"
+                ],
+                "exported_value": [
+                    "2019-07-25"
+                ]
+            }
+        }
+    }
+},
   {
     "id": 15113,
     "name": "组织_a",
