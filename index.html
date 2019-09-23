@@ -258,6 +258,9 @@
                   <li>
                     <a href="#moment" class="toc-h2 toc-link" data-title="获取某条流程的所有Moment">获取某条流程的所有Moment</a>
                   </li>
+                  <li>
+                    <a href="#assignment" class="toc-h2 toc-link" data-title="获取某条流程的所有Assignment">获取某条流程的所有Assignment</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -780,6 +783,45 @@ PAYLOAD为：<code>{&quot;namespace_id&quot;:1}</code></p>
 <span class="s">]</span>
 </code></pre>
 <p><code>GET /api/v4/yaw/journeys/:id/moments</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>流程id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='assignment'>获取某条流程的所有Assignment</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/yaw/journeys/392/Assignment</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="s">[</span>
+<span class="s">  {</span>
+<span class="s">    "id"=&gt;1,</span>
+<span class="s">    "status"=&gt;"stashed",</span>
+<span class="s">    "category"=&gt;"proposed",</span>
+<span class="s">    "read"=&gt;true,</span>
+<span class="s">    "operation_data"=&gt;{},</span>
+<span class="s">    "current_duration_threshold"=&gt;nil,</span>
+<span class="s">    "vertex_id"=&gt;135,</span>
+<span class="s">    "journey_id"=&gt;1,</span>
+<span class="s">    "created_at"=&gt;"2018-09-05T15:00:48.720+08:00",</span>
+<span class="s">    "updated_at"=&gt;"2018-09-05T15:00:48.720+08:00",</span>
+<span class="s">    "response"=&gt;{"id"=&gt;2, "created_at"=&gt;"2018-09-05T15:00:48.703+08:00", "cached_values"=&gt;{}, "mapped_values"=&gt;{}}</span>
+<span class="s">  }</span>
+<span class="s">]</span>
+</code></pre>
+<p><code>GET /api/v4/yaw/journeys/:id/assignments</code></p>
 
 <p><strong>Parameters</strong></p>
 
