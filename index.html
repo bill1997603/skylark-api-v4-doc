@@ -322,6 +322,9 @@
                   <li>
                     <a href="#5c224df13c" class="toc-h2 toc-link" data-title="查询当前组织管理员">查询当前组织管理员</a>
                   </li>
+                  <li>
+                    <a href="#0e028a78c9" class="toc-h2 toc-link" data-title="查询当前组织创建者">查询当前组织创建者</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1917,6 +1920,65 @@ PAYLOAD为：<code>{&quot;namespace_id&quot;:1}</code></p>
 
 </code></pre>
 <p><code>GET /api/v4/organizations/:organization_id/administrators</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>organization_id</td>
+<td>integer</td>
+<td>组织id</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='0e028a78c9'>查询当前组织创建者</h2><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v4/organizations/:organization_id/founder</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Authorization</span><span class="p">:</span> <span class="s">your_authorization</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="s">{</span>
+<span class="s">  "id": 18,</span>
+<span class="s">  "user": {</span>
+<span class="s">    "id": 3,</span>
+<span class="s">    "name": "a11",</span>
+<span class="s">    "nickname": null,</span>
+<span class="s">    "phone": "18828072450",</span>
+<span class="s">    "identifier": "18828072450",</span>
+<span class="s">    "qq": null,</span>
+<span class="s">    "headimgurl": "/non-digested-assets/avatars/default.png",</span>
+<span class="s">    "openid": null,</span>
+<span class="s">    "imported_alias": "a11",</span>
+<span class="s">    "from_wechat": false,</span>
+<span class="s">    "tags": [],</span>
+<span class="s">    "custom_values": []</span>
+<span class="s">  },</span>
+<span class="s">  "access": {</span>
+<span class="s">    "id": 2,</span>
+<span class="s">    "name": "创建者",</span>
+<span class="s">    "actions": [</span>
+<span class="s">      1,</span>
+<span class="s">      3,</span>
+<span class="s">      4</span>
+<span class="s">    ],</span>
+<span class="s">    "founded": true</span>
+<span class="s">  },</span>
+<span class="s">  "organization": {</span>
+<span class="s">    "id": 23,</span>
+<span class="s">    "name": "123123",</span>
+<span class="s">    "description": "123123",</span>
+<span class="s">    "created_at": "2018-12-05T10:41:33.068+08:00"</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+
+</code></pre>
+<p><code>GET /api/v4/organizations/:organization_id/founder</code></p>
 
 <p><strong>Parameters</strong></p>
 
