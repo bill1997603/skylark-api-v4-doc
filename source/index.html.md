@@ -11,10 +11,12 @@ includes:
   - Pagination
   - WechatClient
   - Pushes
-  - Flows
+  - Categories
+  - Comments
   - Users
   - Organizations
   - Forms
+  - Flows
   - Attachments
   - Accesses
   - Settings
