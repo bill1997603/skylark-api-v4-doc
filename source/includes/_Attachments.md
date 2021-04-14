@@ -56,6 +56,7 @@ HTTP/1.1 200 OK
 
 ```http
 POST https://up.qbox.me/ HTTP/1.1
+Authorization: your_authorization
 ```
 
 ```http
@@ -78,7 +79,7 @@ HTTP/1.1 200 OK
 | file | file | 文件 |
 | x:key | integer | 暂时固定为 1593586993541 |
 
-## 创建附件（废弃）
+## 创建附件（作为七牛的 callback）
 
 ```http
 POST /api/v4/attachments HTTP/1.1
@@ -96,3 +97,18 @@ HTTP/1.1 200 OK
 | name | string | 文件名称 |
 | size | integer | 文件大小 |
 | mime_type | 文件类型 | |
+
+## 查询附件以 Base64 编码返回
+
+```http
+GET /api/v4/attachments/:id/base64_file HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+{
+  ***
+}
+```
+`GET /api/v4/forms/:id`

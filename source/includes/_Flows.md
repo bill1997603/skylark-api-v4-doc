@@ -577,3 +577,150 @@ HTTP/1.1 200 OK
 | --- | --- | --- | ---- |
 | operation | string | 发起固定为 propose |
 | next_vertex_id | integer | 需要到达的下一个流程节点，从 [发起流程任务（寻路）] 的返回结果获取 |
+
+## 发起流程任务（发起）
+
+```http
+GET /api/v4/yaw/flows/:id/journey_ids HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+[
+  1,2,3
+]
+```
+
+`GET /api/v4/yaw/flows/:id/journeys`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| id | integer | 流程 id |
+
+## 获取某个用户发起的流程
+
+```http
+GET /api/v4/yaw/flows/:flow_id/journeys/proposed_journeys HTTP/1.1
+Authorization: your_authorization
+```
+
+```http
+HTTP/1.1 200 OK
+[
+  {
+      "id": 7802,
+      "status": "processing",
+      "category": "proposed",
+      "read": true,
+      "current_duration_threshold": null,
+      "created_at": "2020-11-18T16:05:08.207+08:00",
+      "updated_at": "2020-11-18T16:05:08.261+08:00",
+      "after_submit_action": "default",
+      "after_submit_redirect_url": null,
+      "gid": "gid://skylark/YetAnotherWorkflow::Assignment/7802",
+      "pretty_current_duration_threshold": null,
+      "journey": {
+          "id": 2236,
+          "sn": "145920201118152008000001",
+          "custom_sn": null,
+          "status": "processing",
+          "current_duration_threshold": null,
+          "created_at": "2020-11-18T16:05:08.207+08:00",
+          "updated_at": "2020-11-18T16:05:08.207+08:00",
+          "gid": "gid://skylark/YetAnotherWorkflow::Journey/2236",
+          "pretty_current_duration_threshold": null,
+          "response": {
+              "id": 78149,
+              "created_at": "2020-11-18T15:20:08.063+08:00",
+              "entries": []
+          },
+          "user": {
+              "id": 79,
+              "name": "樊翔宇",
+              "nickname": "k k",
+              "phone": "18828072450",
+              "identifier": "18828072450",
+              "qq": null,
+              "headimgurl": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKFLWWPT1sSVywib8qpNNfLjMOliblYqa105ibCOKGvzwRV0vAEAlGLcwXia8AK9FQiavG1tDxcCCkfUCA",
+              "openid": "oXDm5s2v7fnJ2Mut-UiiHtCEIb6Q",
+              "imported_alias": "樊翔宇",
+              "gid": "gid://skylark/User/79"
+          }
+      },
+      "response": {
+          "id": 78150,
+          "created_at": "2020-11-18T15:20:08.097+08:00",
+          "entries": [
+              {
+                  "id": 1141143,
+                  "field_id": 7202,
+                  "option_id": null,
+                  "value": "WechatIMG132.jpeg",
+                  "choice_id": null,
+                  "value_id": 3839,
+                  "latitude": null,
+                  "longitude": null,
+                  "group_id": null,
+                  "detail_id": null,
+                  "attachment": {
+                      "id": 3839,
+                      "name": "WechatIMG132.jpeg",
+                      "size": "16998",
+                      "mime_type": "image/jpeg",
+                      "extension": "image",
+                      "extra_info": {}
+                  }
+              },
+              {
+                  "id": 1141142,
+                  "field_id": 7201,
+                  "option_id": null,
+                  "value": "2020-11-18",
+                  "choice_id": null,
+                  "value_id": null,
+                  "latitude": null,
+                  "longitude": null,
+                  "group_id": null,
+                  "detail_id": null
+              },
+              {
+                  "id": 1141141,
+                  "field_id": 7200,
+                  "option_id": 8854,
+                  "value": "新选项",
+                  "choice_id": null,
+                  "value_id": null,
+                  "latitude": null,
+                  "longitude": null,
+                  "group_id": null,
+                  "detail_id": null
+              },
+              {
+                  "id": 1141140,
+                  "field_id": 7199,
+                  "option_id": null,
+                  "value": "test",
+                  "choice_id": null,
+                  "value_id": null,
+                  "latitude": null,
+                  "longitude": null,
+                  "group_id": null,
+                  "detail_id": null
+              }
+          ]
+      }
+  }
+]
+```
+
+`GET /api/v4/yaw/flows/:flow_id/journeys/proposed_journeys`
+
+**Parameters**
+
+| Name | Type | Description | Comments |
+| --- | --- | --- | ---- |
+| flow_id | integer | 流程 id |
+| user_id | integer | 用户 id |

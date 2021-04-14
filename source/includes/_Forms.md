@@ -934,7 +934,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-`GET /api/v4/responses/:io`
+`GET /api/v4/responses/:id`
 
 **Parameters**
 

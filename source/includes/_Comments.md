@@ -118,7 +118,7 @@ Authorization: your_authorization
 HTTP/1.1 204 OK
 ```
 
-`Delete /api/v4/comments/:id`
+`Destroy /api/v4/comments/:id`
 
 **Parameters**
 

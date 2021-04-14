@@ -22,6 +22,7 @@ includes:
   - Settings
   - ColumnExplanation
   - Tags
+  - IdentityCertifications
   - errors
 
 search: true
